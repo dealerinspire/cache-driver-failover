@@ -43,3 +43,9 @@ public function __construct(AppCacheContract $cache)
 }
 ```
 Type-hint the `DealerInspire\AppCache\AppCacheContract` into your class to begin using.
+
+### Laravel Notes
+
+If you are using Laravel <5.8 as your framework, you will NOT be able to use the cache duration
+constants in `AppCacheContract`. These cache durations are in **minutes**. Versions <5.8 will use
+cache duration in **seconds**. Please keep this in mind as you're implementing this package.
