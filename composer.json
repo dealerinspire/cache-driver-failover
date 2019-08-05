@@ -1,0 +1,33 @@
+{
+  "name": "dealerinspire/cache-driver-failover",
+  "description": "Use your preferred cache driver and failover when that driver is not available.",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nick Wilging",
+      "email": "nwilging@dealerinspire.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "laravel/framework": ">=5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "DealerInspire\\AppCache\\": "./src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DealerInspire\\AppCache\\AppCacheProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.1@dev",
+    "mockery/mockery": "^1.0@dev",
+    "phpunit/phpunit": "^8.4@dev"
+  }
+}
