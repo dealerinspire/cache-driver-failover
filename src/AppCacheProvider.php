@@ -42,7 +42,7 @@ class AppCacheProvider extends ServiceProvider implements DeferrableProvider
     public function provides(): array
     {
         return [
-            AppCacheProvider::class
+            AppCacheContract::class
         ];
     }
 }
