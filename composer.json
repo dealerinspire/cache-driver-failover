@@ -1,7 +1,7 @@
 {
   "name": "dealerinspire/cache-driver-failover",
   "description": "Use your preferred cache driver and failover when that driver is not available.",
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
