@@ -35,7 +35,7 @@ class AppCacheProvider extends ServiceProvider implements DeferrableProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../config/app_cache.php',
+            __DIR__ . '/../config/app_cache.php' => config_path('app_cache.php'),
         ], 'config');
     }
 
