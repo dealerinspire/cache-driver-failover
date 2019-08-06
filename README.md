@@ -21,9 +21,15 @@ Register the service provider in `config/app.php`:
 ...
 ```
 
-Publish the config:
+Configuration:
+
+You do not need to publish a configuration for this package. The app_cache configuration
+automatically merged into your `config/cache.php` configuration. If you wish to change the
+`app_cache_driver` configuration, simply add the following to your `config/cache.php`:
 ```
-php artisan vendor:publish --provider="DealerInspire\AppCache\AppCacheProvider"
+...
+'app_cache_driver' => 'value',
+...
 ```
 
 Add the following .env variables:
