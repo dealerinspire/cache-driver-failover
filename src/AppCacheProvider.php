@@ -11,9 +11,13 @@ class AppCacheProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/cache.php', 'cache'
+        );
+
         $this->app->bind(AppCacheContract::class, function (): AppCache {
             $cacheManager = $this->app->make('cache');
-            $appCacheDriver = $this->app->make('config')->get('app_cache.driver');
+            $appCacheDriver = $this->app->make('config')->get('cache.app_cache_driver');
 
             try {
                 $appCache = $cacheManager->driver($appCacheDriver);
@@ -30,13 +34,6 @@ class AppCacheProvider extends ServiceProvider implements DeferrableProvider
                 return new AppCache($default);
             }
         });
-    }
-
-    public function boot(): void
-    {
-        $this->publishes([
-            __DIR__ . '/../config/app_cache.php' => config_path('app_cache.php'),
-        ], 'config');
     }
 
     public function provides(): array
