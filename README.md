@@ -8,13 +8,13 @@ composer require dealerinspire/cache-driver-failover
 ```
 
 Register the service provider in `config/app.php`:
-```
+```php
 ...
 'providers' => [
     ...
     /*
-    * Package Service Providers...
-    */
+     * Package Service Providers...
+     */
     DealerInspire\AppCache\AppCacheProvider::class,
     ...
 ],
@@ -26,14 +26,14 @@ Configuration:
 You do not need to publish a configuration for this package. The app_cache configuration
 automatically merged into your `config/cache.php` configuration. If you wish to change the
 `app_cache_driver` configuration, simply add the following to your `config/cache.php`:
-```
+```php
 ...
 'app_cache_driver' => 'value',
 ...
 ```
 
 Add the following .env variables:
-```
+```bash
 APP_CACHE_DRIVER=redis
 APP_REDIS_HOST=
 APP_REDIS_PASSWORD=
@@ -42,7 +42,7 @@ APP_REDIS_CACHE_DB=0
 ```
 
 Use the package in your project:
-```
+```php
 public function __construct(AppCacheContract $cache)
 {
     $this->cache = $cache;
