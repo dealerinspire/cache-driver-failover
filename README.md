@@ -52,6 +52,7 @@ Type-hint the `DealerInspire\AppCache\AppCacheContract` into your class to begin
 
 ### Laravel Notes
 
-If you are using Laravel <5.8 as your framework, you will NOT be able to use the cache duration
-constants in `AppCacheContract`. These cache durations are in **minutes**. Versions <5.8 will use
-cache duration in **seconds**. Please keep this in mind as you're implementing this package.
+If you are on a version of Laravel lower than 5.8 the cache duration constants in `AppCacheContract`
+will not be accurate. Larave versions less than 5.8 use cache duration values of minutes. In Laravel 5.8,
+cache duration was changed to use seconds, which is the format that this package follows. Please keep
+this in mind as you're implementing this package and be wary of the constants on Laravel <5.8.
