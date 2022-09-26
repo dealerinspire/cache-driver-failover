@@ -53,6 +53,6 @@ Type-hint the `DealerInspire\AppCache\AppCacheContract` into your class to begin
 ### Laravel Notes
 
 If you are on a version of Laravel lower than 5.8 the cache duration constants in `AppCacheContract`
-will not be accurate. Larave versions less than 5.8 use cache duration values of minutes. In Laravel 5.8,
+will not be accurate. Laravel versions less than 5.8 use cache duration values of minutes. In Laravel 5.8,
 cache duration was changed to use seconds, which is the format that this package follows. Please keep
 this in mind as you're implementing this package and be wary of the constants on Laravel <5.8.
